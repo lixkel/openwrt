@@ -31,6 +31,16 @@ define Device/askey_sbe1v1k
 endef
 TARGET_DEVICES += askey_sbe1v1k
 
+define Device/cznic_turris-omnia-ng
+	$(call Device/FitImage)
+	$(call Device/EmmcImage)
+	DEVICE_VENDOR := CZ.NIC
+	DEVICE_MODEL := Turris Omnia NG
+	SOC := ipq9574
+	DEVICE_PACKAGES := kmod-sfp kmod-ath12k ath12k-firmware-qcn9274
+endef
+TARGET_DEVICES += cznic_turris-omnia-ng
+
 define Device/linksys_ln6001
 	$(call Device/FitImage)
 	DEVICE_VENDOR := Linksys
